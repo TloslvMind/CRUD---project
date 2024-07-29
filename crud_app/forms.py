@@ -2,6 +2,6 @@ from django import forms
 
 
 class UserForm(forms.Form):
-    name = forms.CharField(max_length=100, label='Ваше имя',
-                           widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
-    age = forms.IntegerField(label='Ваш возраст?', initial=18, help_text='Введите свой возраст')
+    name = forms.CharField(label='Имя', help_text='Введите свое имя', min_length=2, max_length=10)
+    age = forms.IntegerField(label='Ваш возраст?', help_text='Введите свой возраст', max_value=5)
+    reklama = forms.BooleanField(label='Coглacны получать рекламу?', required=False)
